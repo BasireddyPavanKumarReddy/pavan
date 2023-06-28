@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en" xmlns="https://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Registration Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  	    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+  	
+  </head>
+  <!-- Using thymeleaf concept -->
+  
+  <body background="Images/Road2.jpg">
+  
+   
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <marquee scrollamount="25"
+                 behavior="scroll">
+            <img src="Images/CatRun.gif" width="15%">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+            <img src="Images/DogsRun.JPG" width="30%">
+        </marquee>
+  
+  
+  
+  	<div class="container">
+          <h1 style="color: green;">User Registration form</h1>
+    </div>
+    
+    <form class="col-5" th:action="@{/registerUser}" th:object="${user}" method="post">
+        <div class="mb-3">
+             <label for="exampleFormControlInput1" class="form-label"><b>Name</b></label>
+            <input type="text" th:field="*{name}" class="form-control" placeholder="Enter name">
+        </div>
+        <div class="mb-3">
+             <label for="exampleFormControlInput1" class="form-label"><b>Email</b></label>
+            <input type="email" th:field="*{email}" class="form-control" placeholder="Enter email">
+        </div>
+        <div class="mb-3">
+             <label for="exampleFormControlInput1" class="form-label"><b>Password</b></label>
+            <input type="password" th:field="*{pass}" class="form-control" placeholder="Enter Password">
+        </div>
+        <div class="mb-3">
+             <label for="exampleFormControlInput1" class="form-label"><b>ConfirmPassword</b></label>
+            <input type="password" th:field="*{confPass}" class="form-control" placeholder="Enter ConfirmPassword">
+        </div>
+    
+    <button type="submit" class="btn btn-success"> Register</button>
+    
+    </form>
+    
+    
+  </body>
+</html>
